@@ -1,1619 +1,1442 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#102b24">
-  <title>Nitskiiii GreenSphere</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#102d27">
+  <meta name="description"
+    content="Nitskiiii GreenSphere partners with businesses to create measurable, lasting social and environmental impact.">
+  <title>Nitskiiii GreenSphere | Purpose Into Progress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
   <style>
     :root {
-      --ink: #172b25;
-      --muted: #77857f;
-      --green: #176b4d;
-      --green2: #2b8a63;
-      --mint: #e6f4ec;
-      --line: #e7ece8;
-      --bg: #f6f8f6;
-      --white: #fff;
-      --amber: #b97926;
-      --red: #b95656;
-      --shadow: 0 8px 28px rgba(27, 57, 43, .045)
+      --forest: #12382e;
+      --forest2: #1c4b3c;
+      --lime: #d5f36a;
+      --mint: #eaf2e8;
+      --cream: #f7f7f1;
+      --ink: #17231f;
+      --muted: #63716a;
+      --line: #dce4db;
+      --white: #fff
     }
 
     * {
       box-sizing: border-box
     }
 
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font: 14px/1.45 Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif
+    html {
+      scroll-behavior: smooth
     }
 
-    button,
-    select,
-    input {
-      font: inherit
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--ink);
+      font-family: "DM Sans", sans-serif
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none
     }
 
     button {
-      cursor: pointer
+      font: inherit
     }
 
-    .app {
-      min-height: 100vh;
-      display: grid;
-      grid-template-columns: 248px minmax(0, 1fr)
+    .wrap {
+      width: min(1180px, calc(100% - 48px));
+      margin: auto
     }
 
-    .sidebar {
-      background: #102b24;
-      color: #d9e8df;
-      padding: 24px 16px;
+    .nav {
+      height: 82px;
       display: flex;
-      flex-direction: column;
-      gap: 30px
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px
     }
 
     .brand {
       display: flex;
       align-items: center;
       gap: 11px;
-      padding: 0 10px
+      font-family: Manrope, sans-serif;
+      font-weight: 800;
+      letter-spacing: -.6px
     }
 
     .brand-mark {
-      width: 38px;
-      height: 38px;
-      border-radius: 12px;
-      background: #d8f1df;
-      color: #176b4d;
+      width: 39px;
+      height: 39px;
+      border-radius: 13px;
+      background: var(--lime);
       display: grid;
       place-items: center;
-      font-size: 21px
+      color: var(--forest)
     }
 
-    .brand-name {
-      font-weight: 750;
-      font-size: 17px;
-      letter-spacing: -.4px;
-      color: white
+    .brand-mark svg {
+      width: 24px
     }
 
-    .brand-sub {
-      font-size: 10px;
-      color: #9eb7aa;
-      letter-spacing: 1.2px;
-      text-transform: uppercase;
-      margin-top: 2px
+    .brand small {
+      display: block;
+      font-size: 9px;
+      letter-spacing: 2.2px;
+      color: var(--muted);
+      margin-top: 1px
     }
 
-    .nav-label {
-      font-size: 10px;
-      text-transform: uppercase;
-      letter-spacing: 1.6px;
-      color: #86a397;
-      padding: 0 12px;
-      margin-bottom: 9px
-    }
-
-    .nav {
-      display: grid;
-      gap: 5px
-    }
-
-    .nav button {
-      border: 0;
-      background: transparent;
-      color: #b9ccc2;
-      border-radius: 10px;
-      text-align: left;
-      padding: 11px 12px;
+    .navlinks {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 30px;
       font-size: 13px;
-      transition: .18s
+      color: #45564e
     }
 
-    .nav button:hover,
-    .nav button.active {
-      background: #214438;
-      color: #fff
+    .navlinks a:hover {
+      color: var(--forest)
     }
 
-    .nav .ico {
-      width: 18px;
-      text-align: center;
-      font-size: 16px
-    }
-
-    .sidebar-bottom {
-      margin-top: auto;
-      border-top: 1px solid #29473c;
-      padding: 18px 10px 0
-    }
-
-    .workspace {
-      display: flex;
+    .nav-cta,
+    .btn {
+      display: inline-flex;
       align-items: center;
-      gap: 10px
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 999px;
+      padding: 14px 20px;
+      background: var(--forest);
+      color: #fff;
+      font-weight: 700;
+      font-size: 13px;
+      transition: .2s;
+      cursor: pointer
     }
 
-    .avatar {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
+    .nav-cta:hover,
+    .btn:hover {
+      background: #245d49;
+      transform: translateY(-2px)
+    }
+
+    .btn.light {
+      background: var(--lime);
+      color: var(--forest)
+    }
+
+    .btn.outline {
+      background: transparent;
+      color: var(--forest);
+      border: 1px solid #a9b9ac
+    }
+
+    .hero {
+      padding: 54px 0 78px;
       display: grid;
-      place-items: center;
-      background: #c9e6d3;
-      color: #174c38;
-      font-weight: 700
-    }
-
-    .user-name {
-      font-size: 12px;
-      font-weight: 650;
-      color: #fff
-    }
-
-    .user-role {
-      font-size: 11px;
-      color: #9eb7aa
-    }
-
-    .main {
-      min-width: 0
-    }
-
-    .topbar {
-      height: 76px;
-      background: rgba(255, 255, 255, .88);
-      border-bottom: 1px solid var(--line);
-      display: flex;
+      grid-template-columns: 1.02fr .98fr;
       align-items: center;
-      justify-content: space-between;
-      padding: 0 34px;
-      gap: 18px;
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      backdrop-filter: blur(14px)
-    }
-
-    .crumb {
-      font-size: 12px;
-      color: var(--muted)
-    }
-
-    .crumb strong {
-      color: var(--ink);
-      font-weight: 650
-    }
-
-    .top-actions {
-      display: flex;
-      align-items: center;
-      gap: 12px
-    }
-
-    .select,
-    .icon-btn,
-    .primary-btn,
-    .secondary-btn {
-      border: 1px solid var(--line);
-      background: #fff;
-      border-radius: 10px;
-      padding: 9px 12px;
-      color: var(--ink)
-    }
-
-    .select {
-      font-size: 12px
-    }
-
-    .icon-btn {
-      width: 38px;
-      height: 38px;
-      padding: 0;
-      font-size: 17px;
-      position: relative
-    }
-
-    .dot {
-      position: absolute;
-      right: 8px;
-      top: 7px;
-      width: 6px;
-      height: 6px;
-      background: #df8655;
-      border: 1px solid white;
-      border-radius: 50%
-    }
-
-    .content {
-      max-width: 1500px;
-      margin: 0 auto;
-      padding: 30px 34px 42px
-    }
-
-    .page {
-      display: none;
-      animation: fade .22s ease
-    }
-
-    .page.active {
-      display: block
-    }
-
-    @keyframes fade {
-      from {
-        opacity: .3;
-        transform: translateY(3px)
-      }
-
-      to {
-        opacity: 1;
-        transform: none
-      }
-    }
-
-    .heading {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 18px;
-      margin-bottom: 25px
+      gap: 54px
     }
 
     .eyebrow {
-      font-size: 10px;
-      font-weight: 750;
-      letter-spacing: 1.8px;
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      font-size: 11px;
+      letter-spacing: 1.7px;
       text-transform: uppercase;
-      color: var(--green2);
-      margin-bottom: 8px
+      font-weight: 700;
+      color: var(--forest2)
     }
 
-    .h1 {
-      font-size: 29px;
-      line-height: 1.15;
-      letter-spacing: -1.1px;
-      margin: 0;
-      font-weight: 760
+    .eyebrow:before {
+      content: "";
+      width: 24px;
+      height: 2px;
+      background: #8da93b
     }
 
-    .subheading {
+    .hero h1 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(44px, 5.4vw, 72px);
+      line-height: 1.04;
+      letter-spacing: -3.5px;
+      margin: 23px 0
+    }
+
+    .hero h1 span {
+      color: #73913c
+    }
+
+    .hero p {
+      font-size: 16px;
+      line-height: 1.8;
       color: var(--muted);
-      margin-top: 8px;
-      font-size: 13px
+      max-width: 500px
     }
 
-    .primary-btn {
-      background: var(--green);
-      color: white;
-      border-color: var(--green);
-      font-weight: 650;
-      padding: 11px 15px;
-      box-shadow: 0 5px 12px #176b4d1c
-    }
-
-    .primary-btn:hover {
-      background: #11583e
-    }
-
-    .secondary-btn {
-      font-weight: 600
-    }
-
-    .btn-icon {
-      margin-right: 7px
-    }
-
-    .grid {
-      display: grid;
-      gap: 17px
-    }
-
-    .stats {
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-bottom: 18px
-    }
-
-    .card {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 15px;
-      box-shadow: var(--shadow);
-      min-width: 0
-    }
-
-    .stat {
-      padding: 20px 20px 17px
-    }
-
-    .stat-top {
+    .hero-actions {
       display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 10px
-    }
-
-    .stat-label {
-      color: var(--muted);
-      font-size: 12px;
-      font-weight: 550
-    }
-
-    .stat-icon {
-      height: 35px;
-      width: 35px;
-      border-radius: 11px;
-      background: var(--mint);
-      color: var(--green);
-      display: grid;
-      place-items: center;
-      font-size: 17px
-    }
-
-    .stat-value {
-      font-size: 27px;
-      font-weight: 760;
-      letter-spacing: -1px;
-      margin: 14px 0 7px
-    }
-
-    .stat-foot {
-      font-size: 11px;
-      color: var(--muted);
-      display: flex;
-      align-items: center;
-      gap: 6px
-    }
-
-    .positive {
-      color: var(--green2);
-      font-weight: 700
-    }
-
-    .mini-line {
-      height: 26px;
-      width: 75px
-    }
-
-    .middle {
-      grid-template-columns: minmax(0, 1.55fr) minmax(280px, 1fr);
-      margin-bottom: 18px
-    }
-
-    .card-head {
-      padding: 20px 21px 0;
-      display: flex;
-      justify-content: space-between;
       gap: 12px;
-      align-items: flex-start
+      flex-wrap: wrap;
+      margin-top: 30px
     }
 
-    .card-title {
-      font-size: 14px;
-      font-weight: 720;
-      letter-spacing: -.2px
-    }
-
-    .card-desc {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 5px
-    }
-
-    .card-body {
-      padding: 17px 21px 21px
-    }
-
-    .legend {
-      display: flex;
-      gap: 15px;
-      align-items: center;
-      color: var(--muted);
-      font-size: 11px
-    }
-
-    .legend span {
+    .hero-note {
       display: flex;
       align-items: center;
-      gap: 6px
-    }
-
-    .legend i {
-      width: 8px;
-      height: 8px;
-      border-radius: 3px;
-      background: var(--green)
-    }
-
-    .legend .pale {
-      background: #b8ddc6
-    }
-
-    .chart-wrap {
-      height: 230px;
-      position: relative
-    }
-
-    .chart-wrap svg {
-      width: 100%;
-      height: 100%;
-      overflow: visible
-    }
-
-    .gridline {
-      stroke: #edf1ee;
-      stroke-width: 1
-    }
-
-    .axis {
-      fill: #95a19a;
-      font-size: 10px
-    }
-
-    .bar {
-      fill: #b9dec7;
-      rx: 5;
-      transition: fill .2s
-    }
-
-    .bar.highlight {
-      fill: #247c58
-    }
-
-    .bar:hover {
-      fill: #176b4d
-    }
-
-    .donut-layout {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 24px;
-      padding: 12px 0 5px
-    }
-
-    .donut {
-      width: 155px;
-      height: 155px;
-      position: relative;
-      flex: none
-    }
-
-    .donut svg {
-      width: 100%;
-      height: 100%;
-      transform: rotate(-90deg)
-    }
-
-    .donut-center {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      place-content: center;
-      text-align: center
-    }
-
-    .donut-total {
-      font-size: 23px;
-      font-weight: 760;
-      letter-spacing: -.7px
-    }
-
-    .donut-caption {
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 2px
-    }
-
-    .category-list {
-      display: grid;
-      gap: 15px;
-      min-width: 115px;
-      flex: 1
-    }
-
-    .cat-row {
-      display: grid;
-      grid-template-columns: 9px 1fr auto;
-      align-items: center;
-      gap: 8px;
-      font-size: 11px
-    }
-
-    .cat-dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 3px
-    }
-
-    .cat-name {
+      gap: 12px;
+      margin-top: 34px;
+      font-size: 12px;
       color: var(--muted)
     }
 
-    .cat-val {
+    .avatar-stack {
+      display: flex
+    }
+
+    .avatar {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid var(--cream);
+      margin-left: -8px;
+      background: #c4d4b8;
+      display: grid;
+      place-items: center;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--forest)
+    }
+
+    .avatar:first-child {
+      margin-left: 0;
+      background: #e5c8a6
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 500px;
+      border-radius: 28px;
+      background: #dce8d4;
+      overflow: hidden;
+      padding: 24px;
+      isolation: isolate
+    }
+
+    .hero-visual:before {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: #b4ce99;
+      right: -85px;
+      top: 38px;
+      z-index: -1
+    }
+
+    .hero-visual:after {
+      content: "";
+      position: absolute;
+      width: 270px;
+      height: 270px;
+      border-radius: 50%;
+      background: #8faf79;
+      left: -80px;
+      bottom: -105px;
+      z-index: -1
+    }
+
+    .photo-card {
+      position: absolute;
+      inset: 62px 35px 70px 80px;
+      border-radius: 190px 190px 22px 22px;
+      overflow: hidden;
+      background: linear-gradient(160deg, #6c8966, #254d3c);
+      box-shadow: 0 24px 70px #234c3b35
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      mix-blend-mode: normal
+    }
+
+    .visual-label {
+      position: absolute;
+      left: 24px;
+      top: 24px;
+      border-radius: 999px;
+      padding: 10px 13px;
+      background: #ffffffd9;
+      backdrop-filter: blur(10px);
+      font-size: 11px;
       font-weight: 700
     }
 
-    .bottom-grid {
-      grid-template-columns: minmax(0, 1.5fr) minmax(270px, 1fr)
+    .impact-float {
+      position: absolute;
+      right: 17px;
+      bottom: 27px;
+      width: 190px;
+      padding: 19px;
+      border-radius: 18px;
+      background: var(--forest);
+      color: #fff;
+      box-shadow: 0 16px 40px #12382e35
     }
 
-    .table-card {
-      overflow: hidden
-    }
-
-    .table-scroll {
-      overflow-x: auto
-    }
-
-    .table {
-      border-collapse: collapse;
-      width: 100%;
-      white-space: nowrap;
-      text-align: left
-    }
-
-    .table th {
-      background: #fafcfb;
-      color: #8b9790;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      font-size: 9px;
-      font-weight: 700;
-      padding: 13px 18px;
-      border-top: 1px solid #f0f3f0;
-      border-bottom: 1px solid var(--line)
-    }
-
-    .table td {
-      padding: 14px 18px;
-      border-bottom: 1px solid #eff2ef;
+    .impact-float small {
+      color: #c4d7ca;
       font-size: 11px
     }
 
-    .table tr:last-child td {
-      border-bottom: 0
-    }
-
-    .project-cell {
-      display: flex;
-      align-items: center;
-      gap: 10px
-    }
-
-    .project-avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 9px;
-      background: #e7f3eb;
-      color: #26714f;
-      display: grid;
-      place-items: center;
-      font-size: 15px
-    }
-
-    .project-name {
-      font-weight: 650;
-      font-size: 12px
-    }
-
-    .project-type {
-      color: var(--muted);
-      font-size: 10px;
-      margin-top: 2px
-    }
-
-    .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      border-radius: 30px;
-      padding: 5px 8px;
-      font-size: 10px;
-      font-weight: 650;
-      background: #e7f5ec;
-      color: #28754e
-    }
-
-    .pill:before {
-      content: "";
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: currentColor
-    }
-
-    .pill.amber {
-      background: #fff3df;
-      color: #a46a1d
-    }
-
-    .pill.blue {
-      background: #e8f0ff;
-      color: #4569ae
-    }
-
-    .table-progress {
-      display: flex;
-      align-items: center;
-      gap: 8px
-    }
-
-    .track {
-      width: 62px;
-      height: 5px;
-      background: #edf1ee;
-      border-radius: 20px;
-      overflow: hidden
-    }
-
-    .track span {
+    .impact-float strong {
       display: block;
-      height: 100%;
-      background: #27805a;
-      border-radius: 20px
+      font-family: Manrope, sans-serif;
+      font-size: 30px;
+      margin: 7px 0
     }
 
-    .progress-number {
-      color: var(--muted);
-      font-size: 10px
+    .impact-float span {
+      font-size: 11px;
+      color: var(--lime)
     }
 
-    .activity-list {
-      display: grid;
-      gap: 18px;
-      padding-top: 20px
+    .section {
+      padding: 88px 0
     }
 
-    .activity {
+    .section.white {
+      background: #fff
+    }
+
+    .section-head {
       display: flex;
-      gap: 11px
+      align-items: end;
+      justify-content: space-between;
+      gap: 35px;
+      margin-bottom: 38px
     }
 
-    .activity-icon {
-      width: 32px;
-      height: 32px;
-      flex: none;
-      border-radius: 10px;
+    .section-head h2,
+    .split h2,
+    .cta h2 {
+      font-family: Manrope, sans-serif;
+      font-size: clamp(32px, 4vw, 48px);
+      letter-spacing: -2px;
+      line-height: 1.12;
+      margin: 15px 0 0
+    }
+
+    .section-head p {
+      max-width: 420px;
+      line-height: 1.75;
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0
+    }
+
+    .pillars {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px
+    }
+
+    .pillar {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      background: #fff;
+      min-height: 238px;
+      transition: .25s
+    }
+
+    .pillar:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 35px #183a2410
+    }
+
+    .iconbox {
+      width: 47px;
+      height: 47px;
+      border-radius: 15px;
+      background: var(--mint);
       display: grid;
       place-items: center;
-      background: #edf6f0;
-      color: var(--green);
-      font-size: 14px
+      color: var(--forest)
     }
 
-    .activity-title {
-      font-size: 11px;
-      font-weight: 650
+    .iconbox svg {
+      width: 23px;
+      height: 23px
     }
 
-    .activity-text {
-      font-size: 10px;
+    .pillar h3 {
+      font-family: Manrope, sans-serif;
+      font-size: 19px;
+      margin: 23px 0 10px
+    }
+
+    .pillar p {
       color: var(--muted);
-      margin-top: 3px
+      font-size: 13px;
+      line-height: 1.75;
+      margin: 0
     }
 
-    .activity-time {
-      font-size: 9px;
-      color: #9aa59e;
-      margin-top: 5px
-    }
-
-    .page-toolbar {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      align-items: center;
-      margin-bottom: 18px
-    }
-
-    .search {
-      border: 1px solid var(--line);
-      background: white;
-      border-radius: 10px;
-      padding: 10px 12px;
-      min-width: 220px;
-      outline: none
-    }
-
-    .search:focus,
-    .select:focus {
-      border-color: #7ab698;
-      box-shadow: 0 0 0 3px #dff1e6
-    }
-
-    .project-grid {
-      grid-template-columns: repeat(3, minmax(0, 1fr))
-    }
-
-    .project-card {
-      padding: 19px
-    }
-
-    .project-card-top {
-      display: flex;
-      justify-content: space-between;
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
       align-items: center
     }
 
-    .project-symbol {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      background: #e9f5ed;
-      display: grid;
-      place-items: center;
-      font-size: 19px
+    .split-art {
+      min-height: 420px;
+      border-radius: 25px;
+      overflow: hidden;
+      position: relative;
+      background: #dbe8d5
     }
 
-    .project-card h3 {
-      font-size: 14px;
-      margin: 17px 0 5px;
-      letter-spacing: -.3px
-    }
-
-    .project-card p {
-      font-size: 11px;
-      color: var(--muted);
-      margin: 0;
-      min-height: 32px
-    }
-
-    .project-meta {
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid var(--line);
-      padding-top: 14px;
-      margin-top: 17px;
-      color: var(--muted);
-      font-size: 10px
-    }
-
-    .project-card .track {
+    .split-art img {
       width: 100%;
-      height: 6px;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      object-fit: cover
+    }
+
+    .quote-card {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: #fff;
+      padding: 21px;
+      border-radius: 17px;
+      font-family: Manrope, sans-serif;
+      font-size: 16px;
+      line-height: 1.5;
+      box-shadow: 0 10px 30px #102d2715
+    }
+
+    .quote-card small {
+      display: block;
+      font: 11px "DM Sans", sans-serif;
+      color: var(--muted);
       margin-top: 10px
     }
 
-    .project-card .track span {
-      background: linear-gradient(90deg, #267b56, #73b88d)
+    .split h2 {
+      margin-bottom: 20px
     }
 
-    .analysis-grid {
-      grid-template-columns: repeat(2, minmax(0, 1fr))
-    }
-
-    .metric-row {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 10px;
-      padding: 13px 0;
-      border-bottom: 1px solid #edf1ee
-    }
-
-    .metric-row:last-child {
-      border-bottom: 0
-    }
-
-    .metric-label {
-      font-size: 12px;
-      font-weight: 600
-    }
-
-    .metric-sub {
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 3px
-    }
-
-    .metric-value {
-      font-size: 13px;
-      font-weight: 750
-    }
-
-    .target-bar {
-      height: 7px;
-      background: #edf1ee;
-      border-radius: 20px;
-      margin-top: 9px;
-      overflow: hidden
-    }
-
-    .target-bar span {
-      display: block;
-      height: 100%;
-      background: #2a825d;
-      border-radius: 20px
-    }
-
-    .report-row {
-      display: flex;
-      align-items: center;
-      gap: 13px;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--line)
-    }
-
-    .report-row:last-child {
-      border: 0
-    }
-
-    .file-icon {
-      width: 39px;
-      height: 43px;
-      border-radius: 9px;
-      background: #e7f4eb;
-      color: #27764f;
-      display: grid;
-      place-items: center;
-      font-size: 18px
-    }
-
-    .report-info {
-      flex: 1
-    }
-
-    .report-name {
-      font-size: 12px;
-      font-weight: 700
-    }
-
-    .report-meta {
-      font-size: 10px;
-      color: var(--muted);
-      margin-top: 4px
-    }
-
-    .download-btn {
-      border: 1px solid var(--line);
-      background: #fff;
-      border-radius: 8px;
-      padding: 7px 9px;
-      font-size: 11px
-    }
-
-    .empty {
-      padding: 35px;
-      text-align: center;
+    .split p {
+      font-size: 14px;
+      line-height: 1.85;
       color: var(--muted)
     }
 
-    .toast {
-      position: fixed;
-      bottom: 24px;
-      right: 24px;
-      background: #173b2d;
-      color: white;
-      padding: 13px 17px;
-      border-radius: 11px;
-      box-shadow: 0 10px 35px #0002;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: .25s;
-      pointer-events: none;
-      z-index: 10;
-      font-size: 12px
+    .checklist {
+      display: grid;
+      gap: 13px;
+      margin: 24px 0
     }
 
-    .toast.show {
-      opacity: 1;
+    .check {
+      display: flex;
+      gap: 11px;
+      align-items: flex-start;
+      font-size: 13px;
+      color: #34483e
+    }
+
+    .check i {
+      font-style: normal;
+      width: 21px;
+      height: 21px;
+      border-radius: 50%;
+      background: #e4f0d3;
+      color: var(--forest);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      flex-shrink: 0
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      background: var(--forest);
+      border-radius: 24px;
+      color: #fff;
+      overflow: hidden
+    }
+
+    .stat {
+      padding: 31px;
+      border-right: 1px solid #ffffff22
+    }
+
+    .stat:last-child {
+      border: 0
+    }
+
+    .stat strong {
+      font: 800 35px Manrope, sans-serif;
+      letter-spacing: -1px;
+      color: var(--lime)
+    }
+
+    .stat p {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #cfddd5;
+      margin: 8px 0 0
+    }
+
+    .work-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 18px
+    }
+
+    .work-card {
+      position: relative;
+      min-height: 290px;
+      border-radius: 22px;
+      overflow: hidden;
+      padding: 26px;
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      color: #fff;
+      background: #315847
+    }
+
+    .work-card:first-child {
+      min-height: 400px
+    }
+
+    .work-card img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      transition: transform .6s
+    }
+
+    .work-card:hover img {
+      transform: scale(1.04)
+    }
+
+    .work-card:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, #102a22e8, transparent 75%);
+      z-index: 1
+    }
+
+    .work-card>*:not(img) {
+      position: relative;
+      z-index: 2
+    }
+
+    .work-card .tag {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--lime);
+      font-weight: 700
+    }
+
+    .work-card h3 {
+      font: 700 24px Manrope, sans-serif;
+      margin: 9px 0
+    }
+
+    .work-card p {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #e0e9e2;
+      max-width: 400px;
+      margin: 0
+    }
+
+    .work-side {
+      display: grid;
+      gap: 18px
+    }
+
+    /* Editorial Our Work strip inspired by the reference layout */
+    .work-showcase {
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% - 16px)/2);
+      gap: 16px;
+      align-items: stretch;
+      overflow: hidden;
+      scroll-behavior: smooth;
+      scroll-snap-type: x mandatory
+    }
+
+    .work-intro {
+      background: #ffdc61;
+      min-height: 440px;
+      padding: 42px 30px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      scroll-snap-align: start
+    }
+
+    .work-intro .eyebrow {
+      color: #17231f
+    }
+
+    .work-intro .eyebrow:before {
+      background: #17231f
+    }
+
+    .work-intro h3 {
+      font: 800 25px Manrope, sans-serif;
+      letter-spacing: -.8px;
+      margin: 22px 0 14px
+    }
+
+    .work-intro p {
+      font-size: 14px;
+      line-height: 1.85;
+      color: #343b2e;
+      margin: 0 0 24px
+    }
+
+    .work-intro .btn {
+      border-radius: 0;
+      background: #55b94e;
+      color: #fff;
+      padding: 12px 23px;
+      min-width: 160px
+    }
+
+    .work-tile {
+      position: relative;
+      min-height: 440px;
+      overflow: hidden;
+      background: #345c46;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px 22px;
+      color: #fff;
+      scroll-snap-align: start;
+      border-radius: 18px
+    }
+
+    .work-tile img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s
+    }
+
+    .work-tile:hover img {
+      transform: scale(1.08)
+    }
+
+    .work-tile img {
+      transition: transform .7s cubic-bezier(.2, .75, .2, 1), filter .5s
+    }
+
+    .work-tile:hover:after {
+      background: linear-gradient(180deg, #081e1820 5%, #081e18ed 100%)
+    }
+
+    .work-tile:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, #081e1800 15%, #081e18e8 100%);
+      transition: background .3s
+    }
+
+    .work-tile-content {
+      position: relative;
+      z-index: 1
+    }
+
+    .work-tile h3 {
+      font: 500 19px/1.3 Manrope, sans-serif;
+      letter-spacing: -.5px;
+      margin: 0 0 15px
+    }
+
+    .work-tile .tile-line {
+      display: block;
+      width: 34px;
+      height: 3px;
+      background: #fff
+    }
+
+    .work-tile .tile-description {
+      font-size: 12px;
+      line-height: 1.6;
+      color: #e0e9e2;
+      margin: 0 0 14px;
+      max-width: 300px
+    }
+
+    .work-tile h3 {
+      margin-bottom: 10px
+    }
+
+    .work-tile .tile-number {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #e2f1c7;
+      margin-bottom: 9px;
+      display: block
+    }
+
+    .work-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 18px
+    }
+
+    .work-controls .carousel-status {
+      margin-right: auto;
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: .4px
+    }
+
+    .work-controls .carousel-buttons {
+      display: flex;
+      gap: 8px
+    }
+
+    .work-controls button {
+      width: 46px;
+      height: 46px;
+      border: 1px solid #dce4db;
+      border-radius: 50%;
+      background: #fff;
+      color: #23382d;
+      font-size: 22px;
+      cursor: pointer;
+      box-shadow: 0 5px 18px #17231f0a;
+      transition: transform .2s, background .2s
+    }
+
+    .work-controls button:hover {
+      background: #d5f36a;
+      transform: translateY(-2px)
+    }
+
+    .work-controls button:disabled {
+      opacity: .35;
+      cursor: not-allowed;
       transform: none
+    }
+
+    .work-controls button:hover {
+      background: #d5f36a
+    }
+
+    @media(max-width:1050px) {
+      .work-showcase {
+        grid-auto-columns: calc((100% - 12px)/2);
+        gap: 12px
+      }
+
+      .work-intro,
+      .work-tile {
+        min-height: 400px
+      }
+    }
+
+    @media(max-width:600px) {
+      .work-showcase {
+        grid-auto-columns: 100%;
+        gap: 12px
+      }
+
+      .work-intro,
+      .work-tile {
+        min-height: 390px;
+        padding: 28px 24px
+      }
+
+      .work-tile h3 {
+        font-size: 23px
+      }
+    }
+
+    .client-band {
+      padding: 30px 0;
+      background: #eff3eb
+    }
+
+    .client-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap
+    }
+
+    .client-row span {
+      font: 800 16px Manrope, sans-serif;
+      letter-spacing: -.4px;
+      color: #839087
+    }
+
+    .client-row .intro {
+      font: 700 11px "DM Sans", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--muted)
+    }
+
+    .cta {
+      background: var(--lime);
+      padding: 58px;
+      border-radius: 27px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px
+    }
+
+    .cta h2 {
+      max-width: 650px;
+      margin: 12px 0
+    }
+
+    .cta p {
+      font-size: 13px;
+      color: #4c6343;
+      line-height: 1.7
+    }
+
+    .cta .btn {
+      background: var(--forest);
+      white-space: nowrap
+    }
+
+    .footer {
+      background: #102d27;
+      color: #fff;
+      padding: 54px 0 24px
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 50px;
+      padding-bottom: 38px
+    }
+
+    .footer-brand {
+      max-width: 330px
+    }
+
+    .footer-brand p {
+      font-size: 12px;
+      line-height: 1.8;
+      color: #b7c9bf
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 60px
+    }
+
+    .footer-links div {
+      display: grid;
+      align-content: start;
+      gap: 13px;
+      font-size: 12px;
+      color: #c7d5cd
+    }
+
+    .footer-links strong {
+      color: #fff;
+      margin-bottom: 4px
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ffffff22;
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      color: #91a89b;
+      font-size: 10px
     }
 
     .mobile-menu {
       display: none
     }
 
-    .footer {
-      padding: 22px 0 0;
-      color: #9aa59e;
-      font-size: 10px;
-      text-align: center
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s, transform .6s
     }
 
-    .small-label {
-      font-size: 10px;
-      color: var(--muted)
-    }
-
-    @media(max-width:1150px) {
-      .stats {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-      }
-
-      .project-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-      }
-
-      .content {
-        padding: 25px 23px
-      }
-
-      .topbar {
-        padding: 0 23px
-      }
+    .reveal.visible {
+      opacity: 1;
+      transform: none
     }
 
     @media(max-width:850px) {
-      .app {
-        grid-template-columns: 1fr
-      }
-
-      .sidebar {
-        position: fixed;
-        inset: 0 auto 0 0;
-        width: 250px;
-        z-index: 20;
-        transform: translateX(-100%);
-        transition: transform .25s;
-        box-shadow: 10px 0 30px #0002
-      }
-
-      .sidebar.open {
-        transform: translateX(0)
+      .navlinks {
+        display: none
       }
 
       .mobile-menu {
-        display: inline-grid;
-        place-items: center
+        display: inline-flex;
+        border: 1px solid var(--line);
+        background: transparent;
+        border-radius: 50%;
+        width: 42px;
+        height: 42px;
+        align-items: center;
+        justify-content: center
       }
 
-      .topbar {
-        height: 65px;
-        padding: 0 17px
+      .navlinks.open {
+        display: flex;
+        position: absolute;
+        top: 72px;
+        left: 24px;
+        right: 24px;
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        padding: 20px;
+        z-index: 10;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        box-shadow: 0 15px 35px #0001
       }
 
-      .content {
-        padding: 22px 17px
+      .nav-cta {
+        display: none
       }
 
-      .middle,
-      .bottom-grid {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding-top: 30px
+      }
+
+      .hero-visual {
+        min-height: 440px
+      }
+
+      .section {
+        padding: 65px 0
+      }
+
+      .section-head {
+        display: block
+      }
+
+      .section-head p {
+        margin-top: 18px
+      }
+
+      .split {
+        grid-template-columns: 1fr;
+        gap: 32px
+      }
+
+      .pillars {
         grid-template-columns: 1fr
       }
 
-      .heading {
-        align-items: flex-start;
-        flex-direction: column
+      .stats {
+        grid-template-columns: 1fr 1fr
       }
 
-      .heading .primary-btn {
-        align-self: flex-start
+      .stat:nth-child(2) {
+        border-right: 0
       }
 
-      .h1 {
-        font-size: 25px
+      .stat:nth-child(-n+2) {
+        border-bottom: 1px solid #ffffff22
       }
 
-      .top-actions {
-        gap: 7px
+      .work-grid {
+        grid-template-columns: 1fr
       }
 
-      .top-actions .select {
-        max-width: 145px
+      .work-card:first-child {
+        min-height: 330px
       }
 
-      .donut-layout {
-        gap: 15px
+      .work-side {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .cta {
+        padding: 35px;
+        display: block
+      }
+
+      .cta .btn {
+        margin-top: 14px
+      }
+
+      .footer-top {
+        display: block
+      }
+
+      .footer-links {
+        margin-top: 35px;
+        gap: 40px
       }
     }
 
-    @media(max-width:560px) {
+    @media(max-width:520px) {
+      .wrap {
+        width: min(100% - 32px, 1180px)
+      }
+
+      .nav {
+        height: 70px
+      }
+
+      .hero h1 {
+        letter-spacing: -2px
+      }
+
+      .hero-visual {
+        min-height: 360px;
+        padding: 15px
+      }
+
+      .photo-card {
+        inset: 48px 26px 52px 52px
+      }
+
+      .impact-float {
+        width: 150px;
+        padding: 14px;
+        right: 12px;
+        bottom: 17px
+      }
+
+      .impact-float strong {
+        font-size: 24px
+      }
+
       .stats {
-        gap: 10px
+        grid-template-columns: 1fr 1fr
       }
 
       .stat {
-        padding: 14px
+        padding: 22px 16px
       }
 
-      .stat-value {
-        font-size: 23px
+      .stat strong {
+        font-size: 28px
       }
 
-      .stat-icon {
-        width: 30px;
-        height: 30px
-      }
-
-      .stat-foot {
-        font-size: 10px
-      }
-
-      .project-grid,
-      .analysis-grid {
+      .work-side {
         grid-template-columns: 1fr
       }
 
-      .content {
-        padding: 19px 12px
+      .work-card {
+        min-height: 270px
       }
 
-      .topbar {
-        padding: 0 12px
+      .cta {
+        padding: 28px
       }
 
-      .crumb {
-        font-size: 11px
+      .footer-links {
+        gap: 25px
       }
 
-      .top-actions .select {
-        max-width: 125px;
-        padding: 8px 6px
-      }
-
-      .heading {
-        margin-bottom: 19px
-      }
-
-      .donut-layout {
-        flex-direction: column
-      }
-
-      .category-list {
-        width: 100%;
-        grid-template-columns: repeat(2, minmax(0, 1fr))
-      }
-
-      .chart-wrap {
-        height: 195px
-      }
-
-      .search {
-        min-width: 0;
-        width: 100%
-      }
-
-      .page-toolbar .select {
-        flex: 1
-      }
-
-      .h1 {
-        font-size: 23px
+      .footer-bottom {
+        display: block;
+        line-height: 2.1
       }
     }
   </style>
 </head>
 
 <body>
-  <div class="app">
-    <aside class="sidebar" id="sidebar">
-      <div class="brand">
-        <div class="brand-mark">✳</div>
-        <div>
-          <div class="brand-name">Nitskiiii GreenSphere</div>
-          <div class="brand-sub">Social impact suite</div>
+  <header class="wrap">
+    <nav class="nav" aria-label="Main navigation">
+      <a class="brand" href="#home" aria-label="Nitskiiii GreenSphere home">
+        <span class="brand-mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 4c-8 0-14 3-14 10a6 6 0 0 0 6 6c7 0 8-8 8-16Z" />
+            <path d="M4 21c3-6 7-9 12-12" />
+          </svg></span>
+        <span>Nitskiiii <span style="color:#75934a">GreenSphere</span><small>IMPACT WITH INTENTION</small></span>
+      </a>
+      <div class="navlinks" id="navlinks"><a href="#about">Our philosophy</a><a href="#services">What we do</a><a
+          href="#impact">Our impact</a><a href="#work">Our work</a></div>
+      <a class="nav-cta" href="#contact">Start a conversation ↗</a>
+      <button class="mobile-menu" id="menu" aria-label="Toggle navigation">☰</button>
+    </nav>
+  </header>
+  <main id="home">
+    <section class="wrap hero">
+      <div>
+        <div class="eyebrow">Business with a bigger purpose</div>
+        <h1>Good business.<br><span>Lasting impact.</span></h1>
+        <p>Nitskiiii GreenSphere helps organisations turn Corporate Social Responsibility (CSR) commitments into
+          meaningful action — from community development and environmental sustainability to responsible business
+          practices and measurable social impact.</p>
+        <div class="hero-actions"><a class="btn" href="#about">Discover our approach <span>↗</span></a><a
+            class="btn outline" href="#work">Explore our focus</a></div>
+        <div class="hero-note">
+          <div class="avatar-stack"><span class="avatar">C</span><span class="avatar">S</span><span
+              class="avatar">E</span></div><span>People-first thinking. Planet-conscious action.</span>
         </div>
       </div>
-      <div>
-        <div class="nav-label">Workspace</div>
-        <nav class="nav" id="nav">
-          <button class="active" data-page="dashboard"><span class="ico">◫</span>Overview</button>
-          <button data-page="projects"><span class="ico">▦</span>CSR Projects</button>
-          <button data-page="analysis"><span class="ico">⌁</span>Impact Analysis</button>
-          <button data-page="beneficiaries"><span class="ico">♧</span>Beneficiaries</button>
-          <button data-page="reports"><span class="ico">▤</span>Reports & Insights</button>
-        </nav>
+      <div class="hero-visual">
+        <div class="visual-label">Purpose, made practical&nbsp; ✳</div>
+        <div class="photo-card"><img
+            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1000&q=85"
+            alt="Community members connecting and collaborating"></div>
+        <div class="impact-float"><small>Our guiding belief</small><strong>Impact<br>that lasts.</strong><span>People ·
+            Planet · Progress</span></div>
       </div>
-      <div>
-        <div class="nav-label">Manage</div>
-        <nav class="nav"><button data-page="settings"><span class="ico">⚙</span>Workspace settings</button></nav>
-      </div>
-      <div class="sidebar-bottom">
-        <div class="workspace">
-          <div class="avatar">NI</div>
+    </section>
+    <section class="client-band">
+      <div class="wrap client-row"><span class="intro">A more thoughtful way forward</span><span>PEOPLE
+          FIRST</span><span>PLANET MINDED</span><span>IMPACT LED</span><span>BUILT TO LAST</span></div>
+    </section>
+    <section class="section white" id="about">
+      <div class="wrap">
+        <div class="section-head reveal">
           <div>
-            <div class="user-name">Nitskiiii GreenSphere</div>
-            <div class="user-role">CSR administrator</div>
+            <div class="eyebrow">What we believe</div>
+            <h2>Progress means more<br>when it includes everyone.</h2>
           </div>
+          <p>CSR is more than a report or a one-time initiative. It is a practical commitment to stronger communities, a
+            healthier environment, responsible business decisions and outcomes that can be understood, measured and
+            improved.</p>
         </div>
-      </div>
-    </aside>
-    <main class="main">
-      <header class="topbar">
-        <div style="display:flex;align-items:center;gap:13px"><button class="icon-btn mobile-menu" id="menuBtn"
-            aria-label="Open menu">☰</button>
-          <div class="crumb">Workspace <span style="margin:0 7px;color:#b5beb8">/</span> <strong
-              id="crumbTitle">Overview</strong></div>
-        </div>
-        <div class="top-actions"><select class="select" id="yearSelect" aria-label="Financial year">
-            <option>FY 2026–27</option>
-            <option>FY 2025–26</option>
-            <option>FY 2024–25</option>
-          </select><button class="icon-btn" id="notificationBtn" aria-label="Notifications">♧<span
-              class="dot"></span></button>
-          <div class="avatar" title="Acme Corporation">AC</div>
-        </div>
-      </header>
-      <div class="content">
-        <section class="page active" id="page-dashboard">
-          <div class="heading">
-            <div>
-              <div class="eyebrow">Impact intelligence · FY 2026–27</div>
-              <h1 class="h1">Good morning, team <span style="font-size:24px">✦</span></h1>
-              <div class="subheading">Here’s the story your social impact data is telling.</div>
-            </div><button class="primary-btn" id="newProjectBtn"><span class="btn-icon">＋</span>New project</button>
-          </div>
-          <div class="grid stats">
-            <article class="card stat">
-              <div class="stat-top">
-                <div class="stat-label">Total CSR investment</div>
-                <div class="stat-icon">₹</div>
-              </div>
-              <div class="stat-value" data-base="4.8">₹4.8 Cr</div>
-              <div class="stat-foot"><span class="positive">↗ 12.8%</span> <span>vs. previous year</span></div>
-            </article>
-            <article class="card stat">
-              <div class="stat-top">
-                <div class="stat-label">People reached</div>
-                <div class="stat-icon">♧</div>
-              </div>
-              <div class="stat-value">24,850</div>
-              <div class="stat-foot"><span class="positive">↗ 18.4%</span><span>target: 30,000</span></div>
-            </article>
-            <article class="card stat">
-              <div class="stat-top">
-                <div class="stat-label">Active projects</div>
-                <div class="stat-icon">▦</div>
-              </div>
-              <div class="stat-value">32</div>
-              <div class="stat-foot"><span class="positive">8 completed</span><span>this financial year</span></div>
-            </article>
-            <article class="card stat">
-              <div class="stat-top">
-                <div class="stat-label">Outcome achievement</div>
-                <div class="stat-icon">↗</div>
-              </div>
-              <div class="stat-value">82.4%</div>
-              <div class="stat-foot"><span class="positive">+6.2 pts</span><span>against project targets</span></div>
-            </article>
-          </div>
-          <div class="grid middle">
-            <article class="card">
-              <div class="card-head">
-                <div>
-                  <div class="card-title">Investment over time</div>
-                  <div class="card-desc">CSR spending by quarter · ₹ lakh</div>
-                </div><select class="select" id="chartRange">
-                  <option value="year">This financial year</option>
-                  <option value="previous">Previous year</option>
-                </select>
-              </div>
-              <div class="card-body">
-                <div class="legend"><span><i></i>Current period</span><span><i class="pale"></i>Previous period</span>
-                </div>
-                <div class="chart-wrap"><svg id="investmentChart" viewBox="0 0 600 230" role="img"
-                    aria-label="Quarterly CSR investment bar chart"></svg></div>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-head">
-                <div>
-                  <div class="card-title">Investment by focus area</div>
-                  <div class="card-desc">How your CSR portfolio is allocated</div>
-                </div><button class="icon-btn" style="width:30px;height:30px;font-size:14px" title="More information"
-                  id="focusInfo">···</button>
-              </div>
-              <div class="card-body">
-                <div class="donut-layout">
-                  <div class="donut"><svg viewBox="0 0 160 160" id="donutChart">
-                      <circle cx="80" cy="80" r="58" fill="none" stroke="#edf2ee" stroke-width="20" />
-                      <circle cx="80" cy="80" r="58" fill="none" stroke="#287b56" stroke-width="20"
-                        stroke-dasharray="164 365" stroke-dashoffset="0" />
-                      <circle cx="80" cy="80" r="58" fill="none" stroke="#79b88e" stroke-width="20"
-                        stroke-dasharray="91 365" stroke-dashoffset="-164" />
-                      <circle cx="80" cy="80" r="58" fill="none" stroke="#c4e4ce" stroke-width="20"
-                        stroke-dasharray="65 365" stroke-dashoffset="-255" />
-                      <circle cx="80" cy="80" r="58" fill="none" stroke="#e4c28b" stroke-width="20"
-                        stroke-dasharray="45 365" stroke-dashoffset="-320" />
-                    </svg>
-                    <div class="donut-center">
-                      <div class="donut-total">₹4.8 Cr</div>
-                      <div class="donut-caption">Total invested</div>
-                    </div>
-                  </div>
-                  <div class="category-list">
-                    <div class="cat-row"><span class="cat-dot" style="background:#287b56"></span><span
-                        class="cat-name">Education</span><span class="cat-val">45%</span></div>
-                    <div class="cat-row"><span class="cat-dot" style="background:#79b88e"></span><span
-                        class="cat-name">Healthcare</span><span class="cat-val">25%</span></div>
-                    <div class="cat-row"><span class="cat-dot" style="background:#c4e4ce"></span><span
-                        class="cat-name">Environment</span><span class="cat-val">18%</span></div>
-                    <div class="cat-row"><span class="cat-dot" style="background:#e4c28b"></span><span
-                        class="cat-name">Livelihood</span><span class="cat-val">12%</span></div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div class="grid bottom-grid">
-            <article class="card table-card">
-              <div class="card-head" style="padding-bottom:16px">
-                <div>
-                  <div class="card-title">Priority projects</div>
-                  <div class="card-desc">Track progress across your highest-impact initiatives</div>
-                </div><button class="secondary-btn" data-goto="projects">View all ↗</button>
-              </div>
-              <div class="table-scroll">
-                <table class="table">
-                  <thead>
-                    <tr>
-                      <th>Project</th>
-                      <th>Investment</th>
-                      <th>Progress</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
-                  <tbody id="priorityRows"></tbody>
-                </table>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-head">
-                <div>
-                  <div class="card-title">Latest activity</div>
-                  <div class="card-desc">Recent updates from your programmes</div>
-                </div><span class="small-label">View all</span>
-              </div>
-              <div class="card-body">
-                <div class="activity-list">
-                  <div class="activity">
-                    <div class="activity-icon">✓</div>
-                    <div>
-                      <div class="activity-title">Quarterly report approved</div>
-                      <div class="activity-text">Digital Learning Initiative · Q2 report</div>
-                      <div class="activity-time">2 hours ago</div>
-                    </div>
-                  </div>
-                  <div class="activity">
-                    <div class="activity-icon">♧</div>
-                    <div>
-                      <div class="activity-title">New beneficiary milestone</div>
-                      <div class="activity-text">Healthcare Access reached 5,000 people</div>
-                      <div class="activity-time">Yesterday</div>
-                    </div>
-                  </div>
-                  <div class="activity">
-                    <div class="activity-icon">↗</div>
-                    <div>
-                      <div class="activity-title">Impact data updated</div>
-                      <div class="activity-text">Green Village Programme · 12 indicators</div>
-                      <div class="activity-time">2 days ago</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-        <section class="page" id="page-projects">
-          <div class="heading">
-            <div>
-              <div class="eyebrow">Portfolio management</div>
-              <h1 class="h1">CSR Projects</h1>
-              <div class="subheading">Manage initiatives, track delivery, and follow progress.</div>
-            </div><button class="primary-btn" id="projectAdd2">＋ New project</button>
-          </div>
-          <div class="page-toolbar"><input class="search" id="projectSearch" placeholder="⌕  Search projects..."
-              aria-label="Search projects"><select class="select" id="categoryFilter">
-              <option value="all">All focus areas</option>
-              <option>Education</option>
-              <option>Healthcare</option>
-              <option>Environment</option>
-              <option>Livelihood</option>
-            </select><select class="select" id="statusFilter">
-              <option value="all">All statuses</option>
-              <option>On track</option>
-              <option>In progress</option>
-              <option>Needs attention</option>
-              <option>Completed</option>
-            </select></div>
-          <div class="grid project-grid" id="projectCards"></div>
-        </section>
-        <section class="page" id="page-analysis">
-          <div class="heading">
-            <div>
-              <div class="eyebrow">Measurement & outcomes</div>
-              <h1 class="h1">Impact Analysis</h1>
-              <div class="subheading">Understand the difference your programmes are making—not just what they spend.
-              </div>
-            </div><button class="secondary-btn" id="analysisExport">↓ Export summary</button>
-          </div>
-          <div class="grid stats">
-            <article class="card stat">
-              <div class="stat-label">Outcome indicators tracked</div>
-              <div class="stat-value">48</div>
-              <div class="stat-foot">Across 32 active projects</div>
-            </article>
-            <article class="card stat">
-              <div class="stat-label">Targets achieved</div>
-              <div class="stat-value">82.4%</div>
-              <div class="stat-foot"><span class="positive">+6.2 pts</span> vs. previous year</div>
-            </article>
-            <article class="card stat">
-              <div class="stat-label">Data completeness</div>
-              <div class="stat-value">91%</div>
-              <div class="stat-foot">Based on submitted evidence</div>
-            </article>
-            <article class="card stat">
-              <div class="stat-label">Projects needing review</div>
-              <div class="stat-value">4</div>
-              <div class="stat-foot"><span style="color:var(--amber);font-weight:700">Needs attention</span></div>
-            </article>
-          </div>
-          <div class="grid analysis-grid">
-            <article class="card">
-              <div class="card-head">
-                <div>
-                  <div class="card-title">Outcome performance</div>
-                  <div class="card-desc">Illustrative target achievement by programme</div>
-                </div>
-              </div>
-              <div class="card-body" id="outcomeMetrics"></div>
-            </article>
-            <article class="card">
-              <div class="card-head">
-                <div>
-                  <div class="card-title">Impact measurement framework</div>
-                  <div class="card-desc">Follow the path from funding to long-term change</div>
-                </div>
-              </div>
-              <div class="card-body">
-                <div class="metric-row">
-                  <div>
-                    <div class="metric-label">Inputs</div>
-                    <div class="metric-sub">Budget, people, resources committed</div>
-                  </div>
-                  <div class="metric-value">₹4.8 Cr</div>
-                </div>
-                <div class="metric-row">
-                  <div>
-                    <div class="metric-label">Activities</div>
-                    <div class="metric-sub">Classes, clinics, training sessions</div>
-                  </div>
-                  <div class="metric-value">1,240</div>
-                </div>
-                <div class="metric-row">
-                  <div>
-                    <div class="metric-label">Outputs</div>
-                    <div class="metric-sub">People reached, services delivered</div>
-                  </div>
-                  <div class="metric-value">24,850</div>
-                </div>
-                <div class="metric-row">
-                  <div>
-                    <div class="metric-label">Outcomes</div>
-                    <div class="metric-sub">Measured improvements in lives</div>
-                  </div>
-                  <div class="metric-value">82.4%</div>
-                </div>
-                <div
-                  style="padding:13px 12px;background:#f1f8f3;border-radius:10px;margin-top:14px;font-size:11px;color:#4c6d5b">
-                  ↗ Impact claims should be supported by evidence, a defined baseline, and a clear measurement method.
-                </div>
-              </div>
-            </article>
-          </div>
-        </section>
-        <section class="page" id="page-beneficiaries">
-          <div class="heading">
-            <div>
-              <div class="eyebrow">People & communities</div>
-              <h1 class="h1">Beneficiaries</h1>
-              <div class="subheading">A sample overview of the communities reached by CSR programmes.</div>
-            </div><button class="secondary-btn" id="beneficiaryExport">↓ Export CSV</button>
-          </div>
-          <div class="grid stats">
-            <article class="card stat">
-              <div class="stat-label">Total reached</div>
-              <div class="stat-value">24,850</div>
-              <div class="stat-foot">Across all active programmes</div>
-            </article>
-            <article class="card stat">
-              <div class="stat-label">Women & girls</div>
-              <div class="stat-value">13,420</div>
-              <div class="stat-foot">54% of reported beneficiaries</div>
-            </article>
-            <article class="card stat">
-              <div class="stat-label">Rural communities</div>
-              <div class="stat-value">18,600</div>
-              <div class="stat-foot">75% of reported beneficiaries</div>
-            </article>
-            <article class="card stat">
-              <div class="stat-label">Districts covered</div>
-              <div class="stat-value">18</div>
-              <div class="stat-foot">Across 4 states</div>
-            </article>
-          </div>
-          <article class="card table-card">
-            <div class="card-head" style="padding-bottom:16px">
-              <div>
-                <div class="card-title">Programme reach</div>
-                <div class="card-desc">Sample aggregated beneficiary data</div>
-              </div><input class="search" id="beneficiarySearch" placeholder="Search programme..."
-                style="min-width:160px;width:190px">
-            </div>
-            <div class="table-scroll">
-              <table class="table">
-                <thead>
-                  <tr>
-                    <th>Programme</th>
-                    <th>Focus area</th>
-                    <th>People reached</th>
-                    <th>Women & girls</th>
-                    <th>Coverage</th>
-                  </tr>
-                </thead>
-                <tbody id="beneficiaryRows"></tbody>
-              </table>
-            </div>
+        <div class="pillars">
+          <article class="pillar reveal">
+            <div class="iconbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <circle cx="12" cy="8" r="3" />
+                <path d="M5 20v-2a7 7 0 0 1 14 0v2M19 5a3 3 0 0 1 0 6M21 20v-2a5 5 0 0 0-2-4" />
+              </svg></div>
+            <h3>People at the centre</h3>
+            <p>We believe stronger communities begin with listening, inclusion and opportunities that help people
+              thrive.</p>
           </article>
-          <p class="small-label" style="margin-top:13px">Demo only: beneficiary counts are fictional aggregates. Do not
-            use identifiable personal data in a public demo.</p>
-        </section>
-        <section class="page" id="page-reports">
-          <div class="heading">
-            <div>
-              <div class="eyebrow">Evidence & transparency</div>
-              <h1 class="h1">Reports & Insights</h1>
-              <div class="subheading">Preview report types and export the sample data for your demo.</div>
-            </div><button class="primary-btn" id="exportAll">↓ Export portfolio CSV</button>
-          </div>
-          <div class="grid middle">
-            <article class="card">
-              <div class="card-head">
-                <div>
-                  <div class="card-title">Available reports</div>
-                  <div class="card-desc">Illustrative report library</div>
-                </div><select class="select" id="reportYear">
-                  <option>FY 2026–27</option>
-                  <option>FY 2025–26</option>
-                  <option>FY 2024–25</option>
-                </select>
-              </div>
-              <div class="card-body">
-                <div class="report-row">
-                  <div class="file-icon">▤</div>
-                  <div class="report-info">
-                    <div class="report-name">CSR Portfolio Overview</div>
-                    <div class="report-meta">Investment, projects, reach · CSV export</div>
-                  </div><button class="download-btn" data-export="portfolio">Export ↓</button>
-                </div>
-                <div class="report-row">
-                  <div class="file-icon">▧</div>
-                  <div class="report-info">
-                    <div class="report-name">Project Progress Register</div>
-                    <div class="report-meta">Milestones, status, completion · CSV export</div>
-                  </div><button class="download-btn" data-export="projects">Export ↓</button>
-                </div>
-                <div class="report-row">
-                  <div class="file-icon">◎</div>
-                  <div class="report-info">
-                    <div class="report-name">Impact Indicator Summary</div>
-                    <div class="report-meta">Targets, outcomes, data quality · CSV export</div>
-                  </div><button class="download-btn" data-export="impact">Export ↓</button>
-                </div>
-              </div>
-            </article>
-            <article class="card">
-              <div class="card-head">
-                <div>
-                  <div class="card-title">Reporting checklist</div>
-                  <div class="card-desc">Suggested quality checks before publishing</div>
-                </div>
-              </div>
-              <div class="card-body" id="checklist"><label
-                  style="display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:12px"><input
-                    type="checkbox"> Confirm actual spend against finance records</label><label
-                  style="display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:12px"><input
-                    type="checkbox"> Verify outcome indicators and source evidence</label><label
-                  style="display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:12px"><input
-                    type="checkbox"> Document limitations and methodology</label><label
-                  style="display:flex;gap:10px;align-items:flex-start;margin:12px 0;font-size:12px"><input
-                    type="checkbox"> Review personal data and consent requirements</label>
-                <div class="small-label" style="margin-top:17px">Checklist progress: <strong id="checkProgress">0 of 4
-                    complete</strong></div>
-              </div>
-            </article>
-          </div>
-        </section>
-        <section class="page" id="page-settings">
-          <div class="heading">
-            <div>
-              <div class="eyebrow">Workspace</div>
-              <h1 class="h1">Settings</h1>
-              <div class="subheading">Demo workspace profile and display preferences.</div>
-            </div>
-          </div>
-          <div class="card" style="max-width:760px">
-            <div class="card-head">
-              <div>
-                <div class="card-title">Organisation profile</div>
-                <div class="card-desc">These details are stored only in this demo page session.</div>
-              </div>
-            </div>
-            <div class="card-body">
-              <form id="settingsForm" style="display:grid;gap:15px"><label
-                  style="display:grid;gap:6px;font-size:11px;color:var(--muted)">Organisation name<input class="search"
-                    id="orgName" value="Acme Corporation" style="width:100%"></label><label
-                  style="display:grid;gap:6px;font-size:11px;color:var(--muted)">Reporting currency<select
-                    class="select" style="width:100%">
-                    <option>INR — Indian Rupee</option>
-                    <option>USD — US Dollar</option>
-                  </select></label><label style="display:grid;gap:6px;font-size:11px;color:var(--muted)">Default
-                  financial year<select class="select" style="width:100%">
-                    <option>April – March</option>
-                    <option>January – December</option>
-                  </select></label><button class="primary-btn" style="justify-self:start">Save preferences</button>
-              </form>
-            </div>
-          </div>
-        </section>
-        <div class="footer">Nitskiiii GreenSphere demo · All figures are fictional and for UI demonstration only.</div>
+          <article class="pillar reveal">
+            <div class="iconbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M20 4c-8 0-14 3-14 10a6 6 0 0 0 6 6c7 0 8-8 8-16Z" />
+                <path d="M4 21c3-6 7-9 12-12" />
+              </svg></div>
+            <h3>Care for the planet</h3>
+            <p>We champion mindful choices that respect natural resources and support a more resilient future.</p>
+          </article>
+          <article class="pillar reveal">
+            <div class="iconbox"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                <path d="M3 3v18h18M7 14l4-4 3 3 6-7" />
+                <path d="M15 6h5v5" />
+              </svg></div>
+            <h3>Impact you can understand</h3>
+            <p>We focus on clear objectives, meaningful indicators, transparent reporting and learning from outcomes —
+              not just counting activities.</p>
+          </article>
+        </div>
       </div>
-    </main>
-  </div>
-  <div class="toast" id="toast" role="status"></div>
+    </section>
+    <section class="section" id="services">
+      <div class="wrap split">
+        <div class="split-art reveal"><img
+            src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=1100&q=85"
+            alt="Volunteers working together on a community initiative">
+          <div class="quote-card">“Sustainable change starts when good intentions become shared action.”<small>THE
+              GREENSPHERE PHILOSOPHY</small></div>
+        </div>
+        <div class="reveal">
+          <div class="eyebrow">How we create value</div>
+          <h2>From good intentions to meaningful action.</h2>
+          <p>Every organisation has the opportunity to make a difference. We bring CSR planning, community development,
+            environmental responsibility and impact measurement together in one thoughtful approach — shaped around your
+            organisation and the communities you serve.</p>
+          <div class="checklist">
+            <div class="check"><i>✓</i><span><b>Understand the purpose</b><br>Clarify priorities, community needs and
+                shared goals.</span></div>
+            <div class="check"><i>✓</i><span><b>Shape the approach</b><br>Bring people, partners and practical ideas
+                together.</span></div>
+            <div class="check"><i>✓</i><span><b>Measure, report and improve</b><br>Track outputs and outcomes,
+                communicate progress transparently and use learning to improve future initiatives.</span></div>
+          </div><a class="btn" href="#contact">Let's explore what's possible ↗</a>
+        </div>
+      </div>
+    </section>
+    <section class="section white" id="impact">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <div>
+            <div class="eyebrow">Our impact lens</div>
+            <h2>Look beyond activity.<br>Focus on change.</h2>
+          </div>
+          <p>Our CSR approach connects four complementary pillars: community development, environmental sustainability,
+            responsible business and impact measurement. Together, they help organisations move from good intentions to
+            clear goals, accountable delivery and lasting outcomes.</p>
+        </div>
+        <div class="stats reveal">
+          <div class="stat"><strong>01</strong>
+            <p>Community development<br>Education · inclusion · wellbeing</p>
+          </div>
+          <div class="stat"><strong>02</strong>
+            <p>Environmental sustainability<br>Resources · conservation · resilience</p>
+          </div>
+          <div class="stat"><strong>03</strong>
+            <p>Responsible business<br>Values · partnerships · accountability</p>
+          </div>
+          <div class="stat"><strong>04</strong>
+            <p>Impact measurement<br>Indicators · reporting · improvement</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section" id="work">
+      <div class="wrap">
+        <div class="work-showcase" id="workShowcase">
+          <div class="work-intro">
+            <div class="eyebrow">Purpose in action</div>
+            <h3>OUR WORK</h3>
+            <p>At the heart of our work lies collaboration. Social and environmental challenges cannot be solved by any
+              one organisation alone. We bring businesses, communities and partners together to create meaningful,
+              lasting outcomes.</p>
+            <a class="btn" href="#contact">LEARN MORE <span>↗</span></a>
+          </div>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1509099836639-18ba1795216d?auto=format&fit=crop&w=900&q=85"
+              alt="Children learning together in a community">
+            <div class="work-tile-content"><span class="tile-number">01 / People</span>
+              <h3>Community Development</h3>
+              <p class="tile-description">Education, inclusion, wellbeing and opportunities for people to thrive.</p>
+              <span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=85"
+              alt="Green natural landscape and wildlife">
+            <div class="work-tile-content"><span class="tile-number">02 / Planet</span>
+              <h3>Environmental Sustainability</h3>
+              <p class="tile-description">Responsible resource use, conservation and climate-conscious action.</p><span
+                class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=900&q=85"
+              alt="Professionals collaborating on a business project">
+            <div class="work-tile-content"><span class="tile-number">03 / Business</span>
+              <h3>Corporate CSR & Responsible Business</h3>
+              <p class="tile-description">Connecting company values, trusted partnerships and accountable action.</p>
+              <span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=85"
+              alt="Data visualisation and impact measurement">
+            <div class="work-tile-content"><span class="tile-number">04 / Outcomes</span>
+              <h3>Impact Measurement & Reporting</h3>
+              <p class="tile-description">Tracking outcomes, reporting progress and learning what works.</p><span
+                class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=900&q=85"
+              alt="Students learning in a classroom">
+            <div class="work-tile-content"><span class="tile-number">05 / Learning</span>
+              <h3>Education & Skill Development</h3>
+              <p class="tile-description">Supporting access to learning, practical skills and future opportunities.</p>
+              <span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=900&q=85"
+              alt="Healthcare professional supporting community wellbeing">
+            <div class="work-tile-content"><span class="tile-number">06 / Health</span>
+              <h3>Health & Community Wellbeing</h3>
+              <p class="tile-description">Promoting healthier communities through awareness and access-focused
+                initiatives.</p><span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=900&q=85"
+              alt="Diverse team collaborating">
+            <div class="work-tile-content"><span class="tile-number">07 / Equality</span>
+              <h3>Diversity, Equity & Inclusion</h3>
+              <p class="tile-description">Encouraging participation, dignity and opportunity for every community member.
+              </p><span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=900&q=85"
+              alt="Sunlight through a forest">
+            <div class="work-tile-content"><span class="tile-number">08 / Nature</span>
+              <h3>Biodiversity & Conservation</h3>
+              <p class="tile-description">Supporting the protection of ecosystems, habitats and local biodiversity.</p>
+              <span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=900&q=85"
+              alt="Recycling and resource management">
+            <div class="work-tile-content"><span class="tile-number">09 / Resources</span>
+              <h3>Waste & Resource Management</h3>
+              <p class="tile-description">Promoting waste reduction, reuse and more responsible resource choices.</p>
+              <span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1530053969600-caed2596d242?auto=format&fit=crop&w=900&q=85"
+              alt="Clean water flowing in nature">
+            <div class="work-tile-content"><span class="tile-number">10 / Water</span>
+              <h3>Water Stewardship</h3>
+              <p class="tile-description">Building awareness and supporting responsible water use and conservation.</p>
+              <span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=85"
+              alt="Community volunteers working together">
+            <div class="work-tile-content"><span class="tile-number">11 / Partnerships</span>
+              <h3>NGO & Community Partnerships</h3>
+              <p class="tile-description">Bringing organisations and local partners together around shared goals.</p>
+              <span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=900&q=85"
+              alt="Community members meeting outdoors">
+            <div class="work-tile-content"><span class="tile-number">12 / Livelihoods</span>
+              <h3>Livelihoods & Economic Empowerment</h3>
+              <p class="tile-description">Supporting pathways to skills, income generation and resilient livelihoods.
+              </p><span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=85"
+              alt="Team reviewing strategy and documents">
+            <div class="work-tile-content"><span class="tile-number">13 / Governance</span>
+              <h3>CSR Strategy & Governance</h3>
+              <p class="tile-description">Aligning CSR priorities, policies and implementation with organisational
+                purpose.</p><span class="tile-line"></span>
+            </div>
+          </a>
+          <a class="work-tile" href="#contact">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=85"
+              alt="Reports and analytics on a computer">
+            <div class="work-tile-content"><span class="tile-number">14 / Transparency</span>
+              <h3>Monitoring, Evaluation & Learning</h3>
+              <p class="tile-description">Using clear indicators, reflection and evidence to strengthen future
+                programmes.</p><span class="tile-line"></span>
+            </div>
+          </a>
+        </div>
+        <div class="work-controls" aria-label="Work carousel controls">
+          <span class="carousel-status" id="workStatus">01 / 15 · Explore our work</span>
+          <div class="carousel-buttons">
+            <button type="button" id="workPrev" aria-label="Previous work slide">←</button>
+            <button type="button" id="workNext" aria-label="Next work slide">→</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section white" id="contact">
+      <div class="wrap">
+        <div class="cta reveal">
+          <div>
+            <div class="eyebrow">Let's make it meaningful</div>
+            <h2>Have a purpose worth putting into action?</h2>
+            <p>Let's start a conversation about the change your organisation wants to create.</p>
+          </div><a class="btn" href="mailto:hello@nitskiiigreensphere.in?subject=Let's%20talk%20about%20impact">Connect
+            with us ↗</a>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer-top">
+        <div class="footer-brand"><a class="brand" href="#home"><span class="brand-mark"><svg viewBox="0 0 24 24"
+                fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 4c-8 0-14 3-14 10a6 6 0 0 0 6 6c7 0 8-8 8-16Z" />
+                <path d="M4 21c3-6 7-9 12-12" />
+              </svg></span><span>Nitskiiii GreenSphere<small style="color:#9db5a7">IMPACT WITH
+                INTENTION</small></span></a>
+          <p>A CSR and sustainability-focused approach that connects community development, environmental care,
+            responsible business and measurable impact.</p>
+        </div>
+        <div class="footer-links">
+          <div><strong>Explore</strong><a href="#about">Our philosophy</a><a href="#services">Our approach</a><a
+              href="#impact">Impact lens</a></div>
+          <div><strong>Connect</strong><a href="#contact">Start a conversation</a><a href="#work">Focus areas</a></div>
+        </div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Nitskiiii GreenSphere. All rights
+          reserved.</span><span>Purpose in action. Progress for everyone.</span></div>
+    </div>
+  </footer>
   <script>
-    const projects = [
-      { name: "Digital Learning Initiative", category: "Education", investment: "₹85 L", progress: 78, status: "In progress", people: "6,200", icon: "▤", owner: "Learning Futures Foundation" },
-      { name: "Community Health Access", category: "Healthcare", investment: "₹1.2 Cr", progress: 92, status: "On track", people: "5,000", icon: "✚", owner: "Care for All Trust" },
-      { name: "Green Village Programme", category: "Environment", investment: "₹68 L", progress: 54, status: "Needs attention", people: "3,450", icon: "♧", owner: "EarthFirst Collective" },
-      { name: "Women in Enterprise", category: "Livelihood", investment: "₹52 L", progress: 66, status: "In progress", people: "2,180", icon: "↗", owner: "Udaan Development Society" },
-      { name: "STEM for Schools", category: "Education", investment: "₹74 L", progress: 100, status: "Completed", people: "4,100", icon: "⌘", owner: "BrightPath Foundation" },
-      { name: "Clean Water Initiative", category: "Environment", investment: "₹41 L", progress: 61, status: "On track", people: "3,920", icon: "◉", owner: "Jal Jeevan Network" },
-      { name: "Mobile Medical Units", category: "Healthcare", investment: "₹48 L", progress: 37, status: "Needs attention", people: "1,850", icon: "✚", owner: "Swasthya Outreach" },
-      { name: "Rural Skills Lab", category: "Livelihood", investment: "₹35 L", progress: 84, status: "On track", people: "2,400", icon: "⚒", owner: "FutureWorks India" }
-    ];
-    const beneficiaries = [
-      ["Digital Learning Initiative", "Education", "6,200", "3,410", "12 districts"],
-      ["Community Health Access", "Healthcare", "5,000", "2,800", "8 districts"],
-      ["Green Village Programme", "Environment", "3,450", "1,690", "6 districts"],
-      ["Women in Enterprise", "Livelihood", "2,180", "1,720", "5 districts"],
-      ["STEM for Schools", "Education", "4,100", "2,150", "9 districts"],
-      ["Clean Water Initiative", "Environment", "3,920", "1,650", "7 districts"]
-    ];
-    const $ = s => document.querySelector(s);
-    const $$ = s => [...document.querySelectorAll(s)];
-    function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(window.toastTimer); window.toastTimer = setTimeout(() => t.classList.remove("show"), 2600) }
-    function moneyNumber(s) { return s }
-    function statusClass(s) { return s === "Needs attention" ? "amber" : s === "Completed" ? "blue" : "" }
-    function renderPriority() { $("#priorityRows").innerHTML = projects.slice(0, 4).map(p => `<tr><td><div class="project-cell"><div class="project-avatar">${p.icon}</div><div><div class="project-name">${p.name}</div><div class="project-type">${p.category}</div></div></div></td><td style="font-weight:650">${p.investment}</td><td><div class="table-progress"><div class="track"><span style="width:${p.progress}%"></span></div><span class="progress-number">${p.progress}%</span></div></td><td><span class="pill ${statusClass(p.status)}">${p.status}</span></td></tr>`).join("") }
-    function renderProjects() { const q = ($("#projectSearch")?.value || "").toLowerCase(), cat = $("#categoryFilter")?.value || "all", st = $("#statusFilter")?.value || "all"; const list = projects.filter(p => (p.name + " " + p.owner + " " + p.category).toLowerCase().includes(q) && (cat === "all" || p.category === cat) && (st === "all" || p.status === st)); $("#projectCards").innerHTML = list.length ? list.map(p => `<article class="card project-card"><div class="project-card-top"><div class="project-symbol">${p.icon}</div><span class="pill ${statusClass(p.status)}">${p.status}</span></div><h3>${p.name}</h3><p>${p.owner}</p><div class="project-meta"><span>${p.category}</span><strong style="color:var(--ink)">${p.investment}</strong></div><div style="display:flex;justify-content:space-between;margin-top:16px;font-size:10px"><span class="small-label">Project progress</span><strong>${p.progress}%</strong></div><div class="track"><span style="width:${p.progress}%"></span></div><div class="project-meta"><span>♧ ${p.people} people reached</span><span>FY 2026–27</span></div></article>`).join("") : '<div class="card empty">No projects match these filters.</div>' }
-    function renderBeneficiaries() { const q = ($("#beneficiarySearch")?.value || "").toLowerCase(); const rows = beneficiaries.filter(r => r.join(" ").toLowerCase().includes(q)); $("#beneficiaryRows").innerHTML = rows.map(r => `<tr><td style="font-weight:650">${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td></tr>`).join("") }
-    function renderOutcomes() { const arr = [["Education & learning", 86, "Students demonstrating improved learning outcomes"], ["Community health", 91, "Beneficiaries receiving follow-up support"], ["Environmental resilience", 72, "Target villages with active conservation plans"], ["Livelihood & skills", 81, "Participants reporting income or employment gains"]]; $("#outcomeMetrics").innerHTML = arr.map(a => `<div class="metric-row" style="display:block"><div style="display:flex;justify-content:space-between;gap:10px"><div><div class="metric-label">${a[0]}</div><div class="metric-sub">${a[2]}</div></div><div class="metric-value">${a[1]}%</div></div><div class="target-bar"><span style="width:${a[1]}%"></span></div></div>`).join("") }
-    function drawChart(previous = false) { const svg = $("#investmentChart"); const cur = previous ? [38, 52, 61, 70] : [45, 63, 79, 96], prev = previous ? [45, 60, 72, 81] : [38, 52, 61, 70]; let out = '';[0, 1, 2, 3, 4].forEach(i => { let y = 18 + i * 42; out += `<line class="gridline" x1="40" y1="${y}" x2="580" y2="${y}"/><text class="axis" x="29" y="${y + 3}" text-anchor="end">${100 - i * 25}</text>` }); const labs = ["Q1", "Q2", "Q3", "Q4"]; for (let i = 0; i < 4; i++) { let x = 93 + i * 130, h1 = cur[i] * 1.65, h2 = prev[i] * 1.65; out += `<rect class="bar" x="${x}" y="${186 - h2}" width="27" height="${h2}"/><rect class="bar highlight" x="${x + 32}" y="${186 - h1}" width="27" height="${h1}"/><text class="axis" x="${x + 29}" y="213" text-anchor="middle">${labs[i]}</text>` } svg.innerHTML = out }
-    function go(page) { $$(".page").forEach(p => p.classList.toggle("active", p.id === "page-" + page)); $$("#nav button").forEach(b => b.classList.toggle("active", b.dataset.page === page)); const names = { dashboard: "Overview", projects: "CSR Projects", analysis: "Impact Analysis", beneficiaries: "Beneficiaries", reports: "Reports & Insights", settings: "Workspace settings" }; $("#crumbTitle").textContent = names[page] || "Overview"; $("#sidebar").classList.remove("open"); window.scrollTo({ top: 0, behavior: "smooth" }) }
-    $("#nav").addEventListener("click", e => { const b = e.target.closest("button[data-page]"); if (b) go(b.dataset.page) });
-    $$("[data-goto]").forEach(b => b.addEventListener("click", () => go(b.dataset.goto)));
-    $("#menuBtn").addEventListener("click", () => $("#sidebar").classList.toggle("open"));
-    $("#newProjectBtn").addEventListener("click", () => toast("Demo mode: connect a backend to create and save projects."));
-    $("#projectAdd2").addEventListener("click", () => toast("Demo mode: project creation will be available with a backend."));
-    $("#notificationBtn").addEventListener("click", () => toast("You’re all caught up on demo notifications."));
-    $("#focusInfo").addEventListener("click", () => toast("Focus-area allocations are illustrative demo figures."));
-    $("#projectSearch").addEventListener("input", renderProjects); $("#categoryFilter").addEventListener("change", renderProjects); $("#statusFilter").addEventListener("change", renderProjects);
-    $("#beneficiarySearch").addEventListener("input", renderBeneficiaries);
-    $("#chartRange").addEventListener("change", e => { drawChart(e.target.value === "previous"); toast(e.target.value === "previous" ? "Showing illustrative previous-year trend" : "Showing illustrative current-year trend") });
-    $("#yearSelect").addEventListener("change", e => toast("Selected " + e.target.value + " · demo values remain illustrative"));
-    $("#analysisExport").addEventListener("click", () => downloadCSV("impact-indicators.csv", [["Programme", "Indicator", "Achievement"], ["Education & learning", "Learning outcomes", 86], ["Community health", "Follow-up support", 91], ["Environmental resilience", "Conservation plans", 72], ["Livelihood & skills", "Income/employment gains", 81]]));
-    $("#beneficiaryExport").addEventListener("click", () => downloadCSV("beneficiary-summary.csv", [["Programme", "Focus area", "People reached", "Women and girls", "Coverage"], ...beneficiaries]));
-    $("#exportAll").addEventListener("click", () => exportProjects());
-    $$("[data-export]").forEach(b => b.addEventListener("click", () => { if (b.dataset.export === "projects") exportProjects(); else if (b.dataset.export === "impact") downloadCSV("impact-indicators.csv", [["Programme", "Indicator", "Achievement"], ["Education & learning", "Learning outcomes", 86], ["Community health", "Follow-up support", 91], ["Environmental resilience", "Conservation plans", 72], ["Livelihood & skills", "Income/employment gains", 81]]); else exportPortfolio() }));
-    function downloadCSV(filename, rows) { const csv = rows.map(row => row.map(v => `"${String(v).replace(/"/g, '""')}"`).join(",")).join("\r\n"); const blob = new Blob(["\ufeff" + csv], { type: "text/csv;charset=utf-8;" }); const url = URL.createObjectURL(blob); const a = document.createElement("a"); a.href = url; a.download = filename; document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url); toast("Downloaded " + filename) }
-    function exportProjects() { downloadCSV("csr-project-register.csv", [["Project", "Category", "Investment", "Progress", "Status", "People reached", "Implementing partner"], ...projects.map(p => [p.name, p.category, p.investment, p.progress + "%", p.status, p.people, p.owner])]) }
-    function exportPortfolio() { downloadCSV("csr-portfolio-overview.csv", [["Project", "Category", "Investment", "Progress", "Status", "People reached"], ...projects.map(p => [p.name, p.category, p.investment, p.progress + "%", p.status, p.people])]) }
-    $("#settingsForm").addEventListener("submit", e => { e.preventDefault(); const name = $("#orgName").value.trim(); if (name) { $(".user-name").textContent = name; toast("Workspace profile updated for this demo.") } else toast("Please enter an organisation name.") });
-    $("#checklist").addEventListener("change", () => { const checks = $$("#checklist input[type=checkbox]"); $("#checkProgress").textContent = checks.filter(c => c.checked).length + " of " + checks.length + " complete" });
-    $("#yearSelect").addEventListener("change", e => { const label = e.target.value; $$(".eyebrow").forEach(el => { if (el.textContent.includes("FY")) el.textContent = el.textContent.replace(/FY \d{4}–\d{2}/, label) }) });
-    renderPriority(); renderProjects(); renderBeneficiaries(); renderOutcomes(); drawChart();
+    const menu = document.getElementById('menu'), links = document.getElementById('navlinks');
+    menu.addEventListener('click', () => links.classList.toggle('open'));
+    links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    const workShowcase = document.getElementById('workShowcase');
+    const workSlides = [...workShowcase.children];
+    const workStatus = document.getElementById('workStatus');
+    let workIndex = 0;
+    function goToWorkSlide(index) {
+      workIndex = Math.max(0, Math.min(index, workSlides.length - 1));
+      workShowcase.scrollTo({ left: workSlides[workIndex].offsetLeft - workShowcase.offsetLeft, behavior: 'smooth' });
+      workStatus.textContent = String(workIndex + 1).padStart(2, '0') + ' / ' + String(workSlides.length).padStart(2, '0') + ' · Explore our work';
+      document.getElementById('workPrev').disabled = workIndex === 0;
+      document.getElementById('workNext').disabled = workIndex === workSlides.length - 1;
+    }
+    document.getElementById('workPrev').addEventListener('click', () => goToWorkSlide(workIndex - 1));
+    document.getElementById('workNext').addEventListener('click', () => goToWorkSlide(workIndex + 1));
+    workShowcase.addEventListener('keydown', event => { if (event.key === 'ArrowRight') goToWorkSlide(workIndex + 1); if (event.key === 'ArrowLeft') goToWorkSlide(workIndex - 1) });
+    goToWorkSlide(0);
+
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target) } }), { threshold: .12 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 </body>
 
